@@ -21,17 +21,6 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-//    @PostMapping("/register")
-//    public ResponseEntity<?> register(@RequestBody User user) {
-//        if (userRepo.existsByEmail(user.getEmail())) {
-//            return ResponseEntity.badRequest().body("Email already in use");
-//        }
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.setRole("ROLE_USER");
-//        userRepo.save(user);
-//        return ResponseEntity.ok("User registered");
-//    }
-
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody User user) {
         if (userRepo.existsByEmail(user.getEmail())) {
@@ -44,8 +33,6 @@ public class AuthController {
 
         return ResponseEntity.ok("User registered successfully");
     }
-
-
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
