@@ -1,15 +1,13 @@
 package com.arise.buildbyte.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name="products")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,7 +22,7 @@ public class Product {
     private String brand;
     private String category;
     private String description;
-    private double price;
-    private int stock;
+    private Double price;
+    private Integer stock;
     private String imageUrl;
 }
